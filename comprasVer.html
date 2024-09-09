@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 10</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="side">
+            <div class="brand">
+                <i class="fa fa-cube"></i>
+                <span>Hamilo</span>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li class="menu-item">
+                        <a href="index.html">
+                            <i class="fa fa-home"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="ventas.html">
+                            <i class="fa fa-shopping-cart"></i>
+                            Ventas
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="compras.html">
+                            <i class="fa fa-shopping-bag"></i>
+                            Compras
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="productos.html">
+                            <i class="fa fa-cubes"></i>
+                            Productos
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="clientes.html">
+                            <i class="fa fa-users"></i>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="proveedores.html">
+                            <i class="fa fa-building"></i>
+                            Proveedores
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-item">
+                    <a href="comprasForm.html">
+                        <i class="fa fa-shopping-bag"></i>
+                        Comprar
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="ventasForm.html">
+                        <i class="fa fa-shopping-cart"></i>
+                        Vender
+                    </a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <span onclick="logout()">
+                    <i class="fa fa-user"></i>
+                    Satanio
+                </span>
+                <div class="btn-menu">
+                    <i class="fa fa-list mobile-lista"></i>
+                    <i class="fa fa-times mobile-cierre"></i>
+                    <div class="mobile-menu">
+                        <div class="mobile-menu-content">
+                            <ul>
+                                <li class="mobile-menu-item">
+                                    <a href="index.html">
+                                        <i class="fa fa-home"></i>
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item ">
+                                    <a href="ventas.html">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Ventas
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item mobile-active">
+                                    <a href="compras.html">
+                                        <i class="fa fa-shopping-bag"></i>
+                                        Compras
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item ">
+                                    <a href="productos.html">
+                                        <i class="fa fa-cubes"></i>
+                                        <span>Productos</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item ">
+                                    <a href="clientes.html">
+                                        <i class="fa fa-users"></i>
+                                        Clientes
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item">
+                                    <a href="proveedores.html">
+                                        <i class="fa fa-building"></i>
+                                        Proveedores
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-cv">
+
+        <div class="content">
+            <h3 class="title">Compras</h3>
+
+            <div class="row row-sm">
+                <div class="col ">
+                    <div class="card m3">
+                        <div class="card-body">
+                            <!-- Proveedor	Fecha	Nro comprobante	Total	Usuario -->
+
+                            <div class="table-container">
+                                <table class="table">
+                                    <tr>
+                                        <th align="left" width="40%">Proveedor</th>
+                                        <td id="proveedor"></td>
+                                    </tr>
+                                    <tr>
+                                        <th align="left" width="40%">Fecha</th>
+                                        <td id="fecha"></td>
+                                    </tr>
+                                    <tr>
+                                        <th align="left" width="40%">Nro comprobante</th>
+                                        <td id="comprobante"></td>
+                                    </tr>
+                                    <tr>
+                                        <th align="left" width="40%">Total</th>
+                                        <td id="total"></td>
+                                    </tr>
+                                    <tr>
+                                        <th align="left" width="40%">Usuario</th>
+                                        <td id="usuario"></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="m5">
+                                <div class="table-container">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="50%">Producto</th>
+                                                <th width="10%">Costo</th>
+                                                <th width="15%">Cantidad</th>
+                                                <th width="10%">Subtotal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="listaVer">
+                                            <tr>
+                                                <td>Teclado</td>
+                                                <td>150.00</td>
+                                                <td>1</td>
+                                                <td>150.00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="3" align="right">TOTAL</th>
+                                                <th colspan="1" align="left" id="ltotal" >0.00</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="center">
+                                <a href="compras.html" class="btn btn-delete">Volver al listado</a>
+                                <a href="comprasForm.html" class="btn btn-show">Comprar</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/compras.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        verificar();
+        mostrarCompra();
+    </script>
+    
+
+</body>
+
+</html>

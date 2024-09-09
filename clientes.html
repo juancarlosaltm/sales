@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 10</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="side">
+            <div class="brand">
+                <i class="fa fa-cube"></i>
+                <span>Hamilo</span>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li class="menu-item">
+                        <a href="index.html">
+                            <i class="fa fa-home"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="ventas.html">
+                            <i class="fa fa-shopping-cart"></i>
+                            Ventas
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="compras.html">
+                            <i class="fa fa-shopping-bag"></i>
+                            Compras
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="productos.html">
+                            <i class="fa fa-cubes"></i>
+                            Productos
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="clientes.html">
+                            <i class="fa fa-users"></i>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="proveedores.html">
+                            <i class="fa fa-building"></i>
+                            Proveedores
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-item">
+                    <a href="comprasForm.html">
+                        <i class="fa fa-shopping-bag"></i>
+                        Comprar
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="ventasForm.html">
+                        <i class="fa fa-shopping-cart"></i>
+                        Vender
+                    </a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <span onclick="logout()">
+                    <i class="fa fa-user"></i>
+                    Satanio
+                </span>
+                <div class="btn-menu">
+                    <i class="fa fa-list mobile-lista"></i>
+                    <i class="fa fa-times mobile-cierre"></i>
+                    <div class="mobile-menu">
+                        <div class="mobile-menu-content">
+                            <ul>
+                                <li class="mobile-menu-item">
+                                    <a href="index.html">
+                                        <i class="fa fa-home"></i>
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item ">
+                                    <a href="ventas.html">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Ventas
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item ">
+                                    <a href="compras.html">
+                                        <i class="fa fa-shopping-bag"></i>
+                                        Compras
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item ">
+                                    <a href="productos.html">
+                                        <i class="fa fa-cubes"></i>
+                                        <span>Productos</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item mobile-active ">
+                                    <a href="clientes.html">
+                                        <i class="fa fa-users"></i>
+                                        Clientes
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-item">
+                                    <a href="proveedores.html">
+                                        <i class="fa fa-building"></i>
+                                        Proveedores
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="content">
+            <h3 class="title">Clientes</h3>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" id="buscar" onkeyup="buscarCliente()" placeholder="Buscar..." class="form">
+                        </div>
+                        <div class="col">
+
+                        </div>
+                        <div class="col right">
+                            <a href="clientesForm.html" class="btn btn-nuevo">
+                                <i class="fa fa-plus"></i>
+                                Nuevo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th width="5%">#</th>
+                                    <th width="20%">Nombre</th>
+                                    <th width="20%">Apellidos</th>
+                                    <th width="10%">Documento</th>
+                                    <th width="10%">Tipo de documento</th>
+                                    <th width="10%">Teléfono</th>
+                                    <th width="10%">Correo</th>
+                                    <th width="20%">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listaClientes">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Jose</td>
+                                    <td>Mamani</td>
+                                    <td>12346578</td>
+                                    <td>CI</td>
+                                    <td>59846512</td>
+                                    <td>jose.mamani@hamiloes.cool</td>
+                                    <td>
+                                        <div class="acciones">
+                                            <a href="" class="btn btn-show m5">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a href="" class="btn btn-edit m5">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a href="" class="btn btn-delete m5">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/clientes.js"></script>
+    <script src="/js/aut.js"></script>
+    <script>
+        verificar();
+        localStorage.removeItem('cliente_seleccionado');
+        cargarDatos();
+    </script>
+
+</body>
+
+</html>
